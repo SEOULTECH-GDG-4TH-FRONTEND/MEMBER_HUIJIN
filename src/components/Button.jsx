@@ -35,6 +35,19 @@ const StyledButton = styled.button`
       background-color: #4a7ed9;
     }
   `}
+
+    // 질문하기 버튼 스타일
+    ${(props) =>
+    props.variant === "questioning" &&
+    `
+      background-color: #FFE5B4; // 연한 살구색
+      color: #454545;
+      border: 1px solid #FFE5B4;
+      &:hover {
+        background-color: #FFD89B; // 호버 시 약간 더 진한 살구색
+        border-color: #FFD89B;
+      }
+     `}
 `;
 
 // 태그 사이에 쓰는 내용을 children으로 받아올 수 있습니다.
