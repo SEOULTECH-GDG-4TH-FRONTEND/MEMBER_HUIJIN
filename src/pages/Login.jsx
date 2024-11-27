@@ -1,4 +1,3 @@
-// 필요한 라이브러리와 컴포넌트 import
 import styled from "styled-components";
 import InputFields from "../components/InputFields";
 import Button from "../components/Button";
@@ -6,9 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
 import { login } from "../apis/user";
-
-// index.html 파일의 <head> 태그 안에 아래 코드를 추가해주세요
-// <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 function Login() {
   const navigate = useNavigate();
@@ -126,7 +122,7 @@ const ButtonGroup = styled.div`
   margin-top: 32px;
 `;
 
-// 배경 장식용 원 1 (메인 핑크)
+// 배경 장식용 원 1 (분홍색)
 const BackgroundCircle1 = styled.div`
   position: fixed;
   width: 800px;

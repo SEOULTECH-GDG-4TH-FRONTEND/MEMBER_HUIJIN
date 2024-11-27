@@ -16,7 +16,7 @@ function Question() {
   const [content, setContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // 입력 길이 제한 추가
+  // 입력 길이 제한 추가 > 1500자 제한
   const MAX_CONTENT_LENGTH = 1500;
 
   // 로그인 되어 있는지 확인
