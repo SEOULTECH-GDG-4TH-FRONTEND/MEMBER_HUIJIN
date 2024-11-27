@@ -123,7 +123,7 @@ const UserBio = styled.p`
   font-size: 14px;
   color: ${colors.secondary};
   margin: 10px 0;
-  line-height: 1.5;
+  line-height: 2.5;
   font-family: "Poppins", sans-serif;
 `;
 

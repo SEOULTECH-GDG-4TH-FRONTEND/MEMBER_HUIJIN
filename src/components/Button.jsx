@@ -36,6 +36,17 @@ const StyledButton = styled.button`
     }
   `}
 
+    // 뒤로 가기 버튼 스타일
+  ${(props) =>
+    props.variant === "back" &&
+    `
+    background-color: #B6D0B6;
+    color: white;
+    &:hover {
+      background-color: #99CC99;
+    }
+  `}
+
     // 질문하기 버튼 스타일
     ${(props) =>
     props.variant === "questioning" &&
