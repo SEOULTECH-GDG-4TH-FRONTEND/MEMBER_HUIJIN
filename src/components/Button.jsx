@@ -55,10 +55,10 @@ const StyledButton = styled.button`
     `
       background-color: #E6E6FA; // 라벤더 색
       color: #454545;
-      border: 1px solid #FFE5B4;
+      border: 1px solid #E6E6FA;
       &:hover {
-        background-color: #D8BFD8; // 호버 시 약간 더 진한 시슬색
-        border-color: #D8BFD8;
+        background-color: #A073A0; // 호버 시 약간 더 진한 색
+        border-color: #A073A0;
       }
      `}
 `;
