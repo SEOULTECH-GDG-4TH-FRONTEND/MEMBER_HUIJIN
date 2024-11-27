@@ -36,7 +36,9 @@ const QNACard = ({
       <RightSection>
         <CardContent>{content}</CardContent>
         {answer === null && received && (
-          <Button onClick={handleAnswer}>답변하기</Button>
+          <Button onClick={handleAnswer} variant="answering">
+            답변하기
+          </Button>
         )}
       </RightSection>
     </CardContainer>

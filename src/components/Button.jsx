@@ -58,7 +58,7 @@ const StyledButton = styled.button`
       border: 1px solid #FFE5B4;
       &:hover {
         background-color: #D8BFD8; // 호버 시 약간 더 진한 시슬색
-        border-color: #FFD89B;
+        border-color: #D8BFD8;
       }
      `}
 `;
