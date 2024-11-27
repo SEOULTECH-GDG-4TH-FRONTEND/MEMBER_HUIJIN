@@ -48,6 +48,19 @@ const StyledButton = styled.button`
         border-color: #FFD89B;
       }
      `}
+
+         // 답변하기 버튼 스타일
+    ${(props) =>
+    props.variant === "answering" &&
+    `
+      background-color: #E6E6FA; // 라벤더 색
+      color: #454545;
+      border: 1px solid #FFE5B4;
+      &:hover {
+        background-color: #D8BFD8; // 호버 시 약간 더 진한 시슬색
+        border-color: #FFD89B;
+      }
+     `}
 `;
 
 // 태그 사이에 쓰는 내용을 children으로 받아올 수 있습니다.
