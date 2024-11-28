@@ -50,7 +50,7 @@ export const getBackgroundColor = (id) => {
 export const getProfileIcon = (id) => {
   switch (id % 10) {
     case 0:
-      return "🎵"; // 벚꽃
+      return "🎵"; // 음표
     case 1:
       return "💫"; // 나비
     case 2:
@@ -66,11 +66,11 @@ export const getProfileIcon = (id) => {
     case 7:
       return "🌙"; // 달
     case 8:
-      return "💎"; // 하와이언 꽃
+      return "💎"; // 다이아
     case 9:
       return "🌊"; // 파도
     default:
-      return "⭐";
+      return "⭐"; // 별
   }
 };
 
