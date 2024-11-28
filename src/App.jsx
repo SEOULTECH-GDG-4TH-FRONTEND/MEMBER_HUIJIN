@@ -28,15 +28,41 @@ const CardWrapper = styled.div`
 `;
 
 function App() {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, setLogout } = useAuth();
   const navigate = useNavigate();
   const [profiles, setProfiles] = useState([]);
 
+  // 로그인 상태 체크
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/login");
     }
   }, [isLoggedIn, navigate]);
+
+  // 페이지 종료 시 로그아웃
+  useEffect(() => {
+    const handleTabClose = () => {
+      if (isLoggedIn) {
+        setLogout();
+      }
+    };
+
+    window.addEventListener("beforeunload", handleTabClose);
+
+    // visibilitychange 이벤트도 추가
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        setLogout();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleTabClose);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [isLoggedIn, setLogout]);
 
   useEffect(() => {
     async function fetchData() {
@@ -45,18 +71,20 @@ function App() {
         setProfiles(data);
       } catch (error) {
         console.error(error);
+        // 에러 발생 시 로그아웃하고 로그인 페이지로 이동
+        setLogout();
+        navigate("/login");
       }
     }
 
     fetchData();
-  }, []);
+  }, [navigate, setLogout]);
 
   return (
     <>
       <Navbar />
       <Wrapper>
         <Title> 누구에게 질문할까요? ✉️</Title>
-
         <CardWrapper>
           {profiles.map((profile) => (
             <ProfileCard
