@@ -146,7 +146,7 @@ const PageContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: #f8fafc;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poor Story", "Poppins", sans-serif;
   position: relative;
   overflow: hidden;
   padding: 20px;

@@ -17,6 +17,7 @@ const Title = styled.div`
   font-size: 32px;
   color: #454545;
   font-weight: 700;
+  font-family: "Poor Story", "Poppins", sans-serif;
 `;
 
 const CardWrapper = styled.div`
@@ -57,7 +58,7 @@ function App() {
         {/* <Title>🙋🏻 누구에게 질문할까요? ✨</Title> */}
         {/* <Title> 누구에게 질문할까요❓ ✨질문✨하고 싶은 분을 골라주세요!</Title> */}
 
-        <Title>🙋🏻 누구에게 질문할까요?</Title>
+        <Title> 누구에게 질문할까요? ✉️</Title>
 
         <CardWrapper>
           {profiles.map((profile) => (

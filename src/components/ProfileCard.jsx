@@ -84,7 +84,7 @@ const CardContainer = styled.div`
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid ${colors.border};
-  font-family: "Poppins", sans-serif;
+  font-family: "Poor Story", "Poppins", sans-serif;
 
   // 마우스 호버 시 약간의 움직임과 그림자 효과 적용
   &:hover {
