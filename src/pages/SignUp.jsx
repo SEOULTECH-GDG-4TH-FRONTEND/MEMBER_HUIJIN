@@ -1,3 +1,4 @@
+// 필요한 라이브러리와 컴포넌트 import
 import styled from "styled-components";
 import InputFields from "../components/InputFields";
 import Button from "../components/Button";
@@ -14,12 +15,14 @@ function SignUp() {
   const [password2, setPassword2] = useState("");
   const [email, setEmail] = useState("");
 
+  // 로그인 상태 체크 및 리다이렉트
   useEffect(() => {
     if (isLoggedIn) {
       navigate("/");
     }
   }, [isLoggedIn, navigate]);
 
+  // 회원가입 처리 함수
   const handleSignup = async () => {
     try {
       await signup(username, password1, password2, email);
@@ -32,11 +35,9 @@ function SignUp() {
 
   return (
     <Wrapper>
-      <Logo src="/logo.svg" alt="" />
-
       <LoginContainer>
-        <LoginTitle>Welcome</LoginTitle>
-        <LoginSubtitle>Please enter your details to sign up</LoginSubtitle>
+        <LoginTitle>Create Account</LoginTitle>
+        <LoginSubtitle>Join our community today!</LoginSubtitle>
 
         <InputFields
           label="이메일"
@@ -46,12 +47,14 @@ function SignUp() {
         />
         <InputFields
           label="비밀번호"
+          type="password"
           onChange={(e) => {
             setPassword1(e.target.value);
           }}
         />
         <InputFields
           label="비밀번호 확인"
+          type="password"
           onChange={(e) => {
             setPassword2(e.target.value);
           }}
@@ -85,6 +88,8 @@ function SignUp() {
       <BackgroundCircle2 />
       <BackgroundCircle3 />
       <BackgroundCircle4 />
+      <BackgroundCircle5 />
+      <BackgroundCircle6 />
     </Wrapper>
   );
 }
@@ -104,11 +109,11 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-// 메인 로그인 컨테이너
+// 메인 회원가입 컨테이너
 const LoginContainer = styled.div`
   width: 100%;
   max-width: 600px;
-  padding: 80px 80px;
+  padding: 60px 80px;
   background: white;
   border-radius: 24px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
@@ -118,21 +123,23 @@ const LoginContainer = styled.div`
 
 // 로고 스타일링
 const Logo = styled.img`
+  position: absolute;
+  top: 30px;
+  left: 40px;
   width: 120px;
   height: auto;
-  margin-bottom: 32px;
+  z-index: 2;
 `;
 
-// 로그인 타이틀 스타일링
+// 회원가입 타이틀 스타일링
 const LoginTitle = styled.h1`
   font-size: 32px;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 8px;
-  margin-top: 16px;
 `;
 
-// 로그인 서브타이틀
+// 회원가입 서브타이틀
 const LoginSubtitle = styled.p`
   font-size: 16px;
   color: #64748b;
@@ -147,50 +154,74 @@ const ButtonGroup = styled.div`
   margin-top: 32px;
 `;
 
-// 배경 장식용 원 1 (분홍색)
+// 배경 장식용 원 1 (연두색)
 const BackgroundCircle1 = styled.div`
   position: fixed;
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff69b433, #ff149433);
-  top: -200px;
-  right: -100px;
+  background: linear-gradient(135deg, #98fb9844, #90ee9044);
+  top: -100px;
+  left: -150px;
   z-index: 0;
 `;
 
-// 배경 장식용 원 2 (하늘색)
+// 배경 장식용 원 2 (연분홍)
 const BackgroundCircle2 = styled.div`
   position: fixed;
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #87ceeb33, #00bfff33);
-  bottom: -150px;
-  left: -50px;
+  background: linear-gradient(135deg, #ffb6c144, #ffc0cb44);
+  top: 20%;
+  right: -100px;
   z-index: 0;
 `;
 
-// 배경 장식용 원 3 (연한 보라)
+// 배경 장식용 원 3 (연노랑)
 const BackgroundCircle3 = styled.div`
   position: fixed;
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e6e6fa44, #dda0dd44);
-  top: 40%;
-  right: 15%;
+  background: linear-gradient(135deg, #ffffe044, #fffacd44);
+  bottom: -100px;
+  right: 20%;
   z-index: 0;
 `;
 
-// 배경 장식용 원 4 (연한 살구색)
+// 배경 장식용 원 4 (연하늘)
 const BackgroundCircle4 = styled.div`
   position: fixed;
   width: 400px;
   height: 400px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #e0ffff44, #b0e0e644);
+  top: 10%;
+  left: 25%;
+  z-index: 0;
+`;
+
+// 배경 장식용 원 5 (연보라)
+const BackgroundCircle5 = styled.div`
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e6e6fa44, #d8bfd844);
+  bottom: 15%;
+  left: 10%;
+  z-index: 0;
+`;
+
+// 배경 장식용 원 6 (연살구)
+const BackgroundCircle6 = styled.div`
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #ffdab944, #ffe4b544);
-  top: 15%;
-  left: 15%;
+  top: 30%;
+  right: 30%;
   z-index: 0;
 `;
