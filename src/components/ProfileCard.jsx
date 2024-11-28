@@ -114,26 +114,31 @@ const ProfileImage = styled.div`
 const UserName = styled.h2`
   font-size: 20px;
   margin: 0;
-  color: ${colors.primary};
+  color: #2a2f3c;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poor Story", "Poppins", sans-serif;
 `;
 
 const UserBio = styled.p`
-  font-size: 14px;
-  color: ${colors.secondary};
+  font-size: 16px;
+  color: #6b7280;
   margin: 10px 0;
-  line-height: 2.5;
-  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  font-family: "Poor Story", "Poppins", sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 `;
 
 const QuestionCount = styled.p`
-  font-size: 14px;
-  color: ${colors.tertiary};
+  font-size: 15px;
+  color: #4a5056;
   margin-top: auto;
   padding-top: 15px;
   border-top: 1px solid ${colors.border};
-  font-family: "Poppins", sans-serif;
+  font-family: "Poor Story", "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 `;
 
 const ProfileCard = (props) => {
